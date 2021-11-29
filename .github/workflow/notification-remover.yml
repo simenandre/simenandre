@@ -1,0 +1,14 @@
+name: notification-remover
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 12 * * *'
+
+jobs:
+  notification-remover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Eomm/notification-remover@v1
+        with:
+          github-user-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
